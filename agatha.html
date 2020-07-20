@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>desafio de pogramação</title>
+</head>
+<body>
+	<h1>Desafio: Programação</h1>
+	<p>
+		esta pilha recebera apenas numeros inteiros <br>
+	    quando terminar mostrarei o menor numero digitado.
+	<p>	
+	<input id="box" type="number"  placeholder="digite um numero">
+	<button type="submit" id="btn">enviar</button>
+	<button type="submit" id="btn2">terminar</button>
+
+	<script type="text/javascript">
+		var pilha = [];
+		var numero;
+		var menor = Infinity;
+
+		document.getElementsByTagName("button")[0].onclick = function(){
+			addLista();
+		};
+
+		document.getElementsByTagName("button")[1].onclick = function(){
+			valorMin();
+		};
+		//função que adiciona o numero na lista
+		function addLista(){
+			numero = parseInt(document.getElementById('box').value);
+			pilha.push(numero);
+			console.log(pilha);
+		};
+		//função que seleciona o menor numero da lista
+		function valorMin(){
+			for(var i = 0; i< pilha.length; i++){
+				if(pilha[i] < menor){
+					menor = pilha[i];
+				}
+			}
+			alert("o menor numero da pilha é: " + menor);
+		};		
+	</script>
+</body>
+</html>
